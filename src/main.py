@@ -1,5 +1,7 @@
 """
 Entry point for the application.
+
+Run with `poetry run python -m src.main`
 """
 
 import os

@@ -52,7 +52,7 @@ class PDFChat:
             question: User question.
 
         Returns:
-            Model-generated answer.
+            str: Model-generated answer.
         """
         self.messages.append({"role": "user", "content": question})
 

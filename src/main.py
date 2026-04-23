@@ -17,10 +17,10 @@ def main() -> None:
 
     # get the API key from the environment variables `.env`
     load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
-    anthropic_api_key: str = os.getenv("ANTHROPIC_API_KEY")
+    anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 
     # exception handling for missing API key
-    if not anthropic_api_key:
+    if anthropic_api_key is None:
         raise ValueError("ANTHROPIC_API_KEY is not set")
 
     pdf_chat: PDFChat = PDFChat(api_key=anthropic_api_key)

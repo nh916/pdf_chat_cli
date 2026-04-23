@@ -8,15 +8,9 @@ There might be a constraint on how big the PDF can be.
 If so, we should handle it gracefully.
 """
 
-from typing import TypedDict
-
 import fitz  # type: ignore # PyMuPDF
 from anthropic import Anthropic
-
-
-class Message(TypedDict):
-    role: str
-    content: str
+from anthropic.types import MessageParam
 
 
 class PDFChat:
@@ -34,7 +28,7 @@ class PDFChat:
         """
         self.client: Anthropic = Anthropic(api_key=api_key)
         self.model: str = model
-        self.messages: list[Message] = []
+        self.messages: list[MessageParam] = []
         self.pdf_text: str = ""
 
     def load_pdf(self, path: str) -> None:

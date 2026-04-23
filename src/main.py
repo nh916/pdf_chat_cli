@@ -1,5 +1,7 @@
 """
 Entry point for the application.
+
+Run with `poetry run python -m src.main`
 """
 
 import os
@@ -13,6 +15,12 @@ from src.ai_pdf_reader import PDFChat
 def main() -> None:
     """
     Entry point for the application.
+
+    1. Get the API key from the environment variables `.env`
+    2. Load the PDF file
+    3. Ask the user a question
+    4. Print the answer
+    5. Repeat until the user exits with `ctrl+c`
     """
 
     # get the API key from the environment variables `.env`

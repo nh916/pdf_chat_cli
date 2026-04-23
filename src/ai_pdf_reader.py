@@ -1,11 +1,7 @@
 """
-The package essentially contains everything needed to speak to the AI model.
+The file essentially contains everything needed to speak to the AI model.
 
 The AI model will read the PDF given by the path and then hold in memory the contents so the user can speak with it.
-
-Notes:
-There might be a constraint on how big the PDF can be.
-If so, we should handle it gracefully.
 """
 
 import fitz  # type: ignore # PyMuPDF
@@ -56,7 +52,7 @@ class PDFChat:
             question: User question.
 
         Returns:
-            Model-generated answer.
+            str: Model-generated answer.
         """
         self.messages.append({"role": "user", "content": question})
 
